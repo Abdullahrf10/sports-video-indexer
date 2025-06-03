@@ -1,52 +1,34 @@
-/* color palette from <https://github.com/vuejs/theme> */
-/* Updated to match logo colors */
+/* Orange theme always on, with logo background */
+
 :root {
-  --vt-c-white: #ffffff;                /* White from logo */
-  --vt-c-orange: #fa9c27;               /* Main orange from logo */
-  --vt-c-orange-soft: #ffd699;          /* Lighter orange for soft backgrounds */
-  --vt-c-orange-mute: #fff3e0;          /* Muted orange for muted backgrounds */
-  --vt-c-brown: #3d2b13;                /* Shadow color from logo */
+  --vt-c-white: #ffffff;
+  --vt-c-orange: #e68619;                /* Slightly darker orange */
+  --vt-c-orange-soft: #ffb74d;           /* Lighter orange for soft backgrounds */
+  --vt-c-orange-mute: #ffe0b2;           /* Muted orange for muted backgrounds */
   --vt-c-black: #181818;
 
-  --vt-c-divider-light-1: #e07c13;      /* Slightly darker orange for borders (hover) */
-  --vt-c-divider-light-2: #f5b04c;      /* Lighter orange for borders */
-  --vt-c-divider-dark-1: #c96a0a;       /* Even darker for dark mode borders (hover) */
-  --vt-c-divider-dark-2: #a85606;       /* Darker for dark mode borders */
+  --vt-c-divider-light-1: #c96a0a;
+  --vt-c-divider-light-2: #f5b04c;
 
-  --vt-c-text-light-1: #ffffff;         /* White text for light mode */
-  --vt-c-text-light-2: #fffbe6;         /* Slightly off-white for secondary text */
-  --vt-c-text-dark-1: #fa9c27;          /* Orange text for dark mode headings */
-  --vt-c-text-dark-2: #ffd699;          /* Light orange for dark mode text */
+  --vt-c-text-light-1: #ffffff;
+  --vt-c-text-light-2: #fffbe6;
 }
 
-/* semantic color variables for this project */
 :root {
-  --color-background: var(--vt-c-orange);           /* Main background color */
-  --color-background-soft: var(--vt-c-orange-soft); /* Soft background color */
-  --color-background-mute: var(--vt-c-orange-mute); /* Muted background color */
+  --color-background: var(--vt-c-orange);
+  --color-background-soft: var(--vt-c-orange-soft);
+  --color-background-mute: var(--vt-c-orange-mute);
 
-  --color-border: var(--vt-c-divider-light-2);      /* Default border color */
-  --color-border-hover: var(--vt-c-divider-light-1);/* Border color on hover */
+  --color-border: var(--vt-c-divider-light-2);
+  --color-border-hover: var(--vt-c-divider-light-1);
 
-  --color-heading: var(--vt-c-text-light-1);        /* Heading color */
-  --color-text: var(--vt-c-text-light-1);           /* Main text color */
+  --color-heading: var(--vt-c-text-light-1);
+  --color-text: var(--vt-c-text-light-1);
 
-  --section-gap: 160px;                             /* Spacing between sections */
+  --section-gap: 160px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: var(--vt-c-black);          /* Main background color (dark) */
-    --color-background-soft: #222014;               /* Soft background color (dark) */
-    --color-background-mute: #28210c;               /* Muted background color (dark) */
-
-    --color-border: var(--vt-c-divider-dark-2);     /* Default border color (dark) */
-    --color-border-hover: var(--vt-c-divider-dark-1);/* Border color on hover (dark) */
-
-    --color-heading: var(--vt-c-text-dark-1);       /* Heading color (dark) */
-    --color-text: var(--vt-c-text-dark-2);          /* Main text color (dark) */
-  }
-}
+/* Removed dark mode override */
 
 *,
 *::before,
@@ -59,7 +41,11 @@
 body {
   min-height: 100vh;
   color: var(--color-text);
-  background: var(--color-background);
+  background:
+    url('logo.png') center center no-repeat,
+    var(--color-background);
+  background-size: 200px 200px; /* Adjust as needed */
+  background-blend-mode: lighten;
   transition:
     color 0.5s,
     background-color 0.5s;
