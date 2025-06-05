@@ -15,9 +15,15 @@ export default defineConfig({
     },
   },
   server: {
-    host: true,
+    host: '0.0.0.0',  // Changed from true to '0.0.0.0'
     port: 5173,
     strictPort: true,
-    allowedHosts: ['.ngrok-free.app', '.ngrok.io']
+    allowedHosts: [
+      'bdca-2001-56a-f4ed-6100-29b2-31a0-c8a6-9ff8.ngrok-free.app',
+      '.ngrok-free.app',
+      '.ngrok.io',
+      'localhost',
+      '127.0.0.1'
+    ]
   }
 })
