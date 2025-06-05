@@ -15,15 +15,22 @@ export default defineConfig({
     },
   },
   server: {
-    host: '0.0.0.0',  // Changed from true to '0.0.0.0'
     port: 5173,
-    strictPort: true,
-    allowedHosts: [
-      'bdca-2001-56a-f4ed-6100-29b2-31a0-c8a6-9ff8.ngrok-free.app',
-      '.ngrok-free.app',
-      '.ngrok.io',
-      'localhost',
-      '127.0.0.1'
-    ]
+    // This is the key part - disable host checking completely
+    hmr: {
+      overlay: false
+    },
+    // Allow all hosts
+    host: true,
+    // This is the important part
+    proxy: {},
+    cors: true,
+    // Disable host check
+    disableHostCheck: true
+  },
+  // Add this preview config too
+  preview: {
+    host: true,
+    port: 5173
   }
 })
